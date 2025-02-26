@@ -27,6 +27,32 @@ responses = {
     "شكرا": ["على الرحب والسعة! 😊", "أي وقت! إذا كنت بحاجة لأي شيء آخر، أخبرني."],
     "بحث عن حجز": ["من فضلك أدخل اسم الشخص أو نوع الخدمة التي تريد البحث عنها."],
     
+    "الغاء الموعد": ["يمكنك إلغاء الحجز من خلال حسابك في قسم 'حجوزاتي'، أو التواصل مع خدمة العملاء.😃 "],
+    "تعديل موعد الحجز": ["نعم، يمكنك تعديل موعد الحجز إذا كانت الخدمة تسمح بذلك. انتقل إلى 'حجوزاتي' واختر الحجز الذي تريد تعديله. 😉"],
+    "طرق الدفع": ["يمكنك الدفع عبر البطاقات الائتمانية، المحافظ الإلكترونية، أو الدفع عند الاستلام حسب الخدمة المتاحة."],
+    "هل هناك خصومات متاحة؟":[ "نعم! لدينا عروض وخصومات دورية. تفقد صفحة العروض أو تواصل معنا لمعرفة التفاصيل. 🎉"],
+    #"ما هي سياسات الإلغاء والاسترداد؟":[ "تختلف السياسات حسب نوع الحجز. يرجى مراجعة الشروط أثناء الحجز أو التواصل معنا للمزيد من التفاصيل."],
+    "كيف أتأكد من تأكيد حجزي؟": ["بعد إتمام الحجز، ستتلقى رسالة تأكيد عبر البريد الإلكتروني أو الهاتف تحتوي على تفاصيل الحجز. 📩"],
+    "هل أستطيع حجز أكثر من خدمة في نفس الوقت؟":[ "بالطبع! يمكنك إضافة عدة خدمات إلى سلة الحجز وإتمامها معًا بنقرة واحدة. 🛒"],
+    "كم يستغرق تأكيد الحجز؟":[ "عادةً ما يتم تأكيد الحجز فورًا، ولكن في بعض الحالات قد يستغرق الأمر بعض الوقت حسب الخدمة المحجوزة."],
+
+   
+    "Hello": ["Welcome! How can I assist you today? 😊", "Hi there! How can I help?"],
+    "How are you?": ["I'm just a program, but I'm doing great! 😃", "I'm functioning well, thanks for asking!"],
+    "Show services": ["🔹 We offer: hotel bookings, flight tickets, car rentals, restaurant reservations, and resorts."],
+    "How to book?": ["It's very easy! Just tell me your name and the type of service you need, and I'll take care of the rest. 😃"],
+    "Who are you?": ["I'm your booking assistant bot! 🤖 My job is to help you manage your bookings easily."],
+    "Thank you": ["You're welcome! 😊", "Anytime! If you need anything else, just let me know."],
+    "Search for a booking": ["Please enter the name of the person or the type of service you want to search for."],
+
+    "Cancel an appointment": ["You can cancel your booking through your account in the 'My Bookings' section or by contacting customer service. 😃"],
+    "Modify booking date": ["Yes, you can change your booking date if the service allows it. Go to 'My Bookings' and select the booking you want to modify. 😉"],
+    "Payment methods": ["You can pay via credit cards, e-wallets, or cash on delivery, depending on the available service."],
+    "Are there any discounts available?": ["Yes! We have periodic offers and discounts. Check the offers page or contact us for details. 🎉"],
+    # "What are the cancellation and refund policies?": ["Policies vary depending on the type of booking. Please review the terms during booking or contact us for more details."],
+    "How do I confirm my booking?": ["After completing your booking, you will receive a confirmation message via email or phone with the booking details. 📩"],
+    "Can I book multiple services at the same time?": ["Of course! You can add multiple services to your booking cart and complete them all in one go. 🛒"],
+    "How long does it take to confirm a booking?": ["Bookings are usually confirmed instantly, but in some cases, it may take some time depending on the booked service."],
 }
 
 # ✅ نظام تتبع الحجز
@@ -121,7 +147,7 @@ def process_user_input(user_input):
         return  # إيقاف المعالجة العادية للرسائل أثناء الحجز
 
     # ✅ بدء الحجز عند الطلب
-    if "حجز" in user_input:
+    if "حجز" or"book" in user_input:
         insert_message("🎟 أدخل اسمك للبدء بالحجز.", "bot")
         booking_step = 0
         booking_data = {}  # إعادة تعيين البيانات
