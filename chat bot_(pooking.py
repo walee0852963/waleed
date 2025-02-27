@@ -147,7 +147,7 @@ def process_user_input(user_input):
         return  # إيقاف المعالجة العادية للرسائل أثناء الحجز
 
     # ✅ بدء الحجز عند الطلب
-    if "حجز" or"book" in user_input:
+    if "حجز" in user_input or"book" in user_input:
         insert_message("🎟 أدخل اسمك للبدء بالحجز.", "bot")
         booking_step = 0
         booking_data = {}  # إعادة تعيين البيانات
